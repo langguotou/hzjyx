@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>霍志鸡邮箱</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 顶栏 -->
+<div class="header">
+  <button class="menu-btn" id="menuBtn" title="邮箱池">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="header-title">霍志鸡邮箱👿👾👽</div>
+  <button class="ad-btn" id="adBtn" title="公告">📢</button>
+</div>
+
+<!-- 侧边栏（邮箱池） -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <span>我的邮箱池</span>
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+  </div>
+  <div class="sidebar-actions">
+    <button class="new-mail-btn" id="newMailBtn">➕ 新建邮箱</button>
+  </div>
+  <div class="mailbox-list" id="mailboxList">
+    <!-- 动态生成邮箱列表 -->
+  </div>
+  <div class="sidebar-footer">
+    <button class="fullscreen-btn" id="fullscreenBtn">🖥️ 退出全屏</button>
+  </div>
+</div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- 邮箱信息区 -->
+<div class="email-section">
+  <div class="email-label">自定义邮箱前缀（可选）</div>
+  <div class="prefix-input-box">
+    <input type="text" id="prefixInput" placeholder="任意输入，如 cnm..." maxlength="20">
+    <button class="generate-btn" id="generateBtn">✨ 生成邮箱</button>
+  </div>
+  <div class="email-box" id="emailBox">
+    <span class="email-text" id="emailText">等待生成邮箱...</span>
+    <button class="copy-btn" id="copyBtn" disabled>复制</button>
+  </div>
+  <div class="email-actions">
+    <button class="save-btn" id="saveBtn" disabled>💾 保存到邮箱池</button>
+  </div>
+  <div class="email-hint">左上角 ☰ 查看邮箱池 · 输入前缀点击 ✨ 生成 · 每 5 秒自动接收新邮件</div>
+  <div class="error-msg" id="errorMsg"></div>
+</div>
+
+<!-- 邮件列表 -->
+<div class="mail-section">
+  <div class="mail-header">
+    <span class="mail-title">收件箱</span>
+    <button class="refresh-btn" id="refreshBtn">↻ 刷新</button>
+  </div>
+  <div class="mail-list" id="mailList">
+    <div class="empty-state" id="emptyState">
+      <div class="empty-icon">📭</div>
+      <div>暂无邮件</div>
+      <div class="empty-sub">生成邮箱后等待接收...</div>
+    </div>
+  </div>
+</div>
+
+<!-- 邮件详情弹窗 -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-subject" id="modalSubject">邮件主题</span>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <div class="modal-meta">
+      <span>发件人：<b id="modalFrom"></b></span>
+      <span>时间：<b id="modalDate"></b></span>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- 发件弹窗 -->
+<div class="modal-overlay" id="composeOverlay">
+  <div class="modal compose-modal">
+    <div class="modal-header">
+      <span class="modal-subject">公告</span>
+      <button class="modal-close" id="composeClose">✕</button>
+    </div>
+    <div class="compose-form">
+      <div class="form-note" style="font-size:16px; color:#333; padding:20px;">
+        本软件为江门市新会陈经纶中学霍志钧同学制作
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
